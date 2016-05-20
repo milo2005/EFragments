@@ -1,0 +1,32 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="color"
+            type="java.lang.Integer"/>
+        <variable
+            name="nombre"
+            type="java.lang.String"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="ezlife.movil.efragments.fragments.ColorFragment">
+
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Display2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{color}"
+            tools:text="Color"
+            android:text="@{nombre}"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            />
+
+    </FrameLayout>
+</layout>
