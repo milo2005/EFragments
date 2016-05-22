@@ -2,6 +2,8 @@ package ezlife.movil.efragments.fragments;
 
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,8 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import ezlife.movil.efragments.BR;
 import ezlife.movil.efragments.R;
-import ezlife.movil.efragments.databinding.FragmentListBinding;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,8 +25,8 @@ public class ListFragment extends Fragment implements AdapterView.OnItemClickLis
         void onColorSelected(int color);
     }
 
-    FragmentListBinding binding;
     OnColorSelectedListener onColorSelectedListener;
+    ViewDataBinding binding;
 
     public ListFragment() {}
 
@@ -36,9 +39,13 @@ public class ListFragment extends Fragment implements AdapterView.OnItemClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding =  FragmentListBinding.inflate(getLayoutInflater(savedInstanceState));
-        binding.setOnItemClick(this);
+
+        View v = inflater.inflate(R.layout.f_list, container, false);
+        binding = DataBindingUtil.bind(v);
+        binding.setVariable(BR.onItemClick, this);
         return binding.getRoot();
+
+
     }
 
     @Override

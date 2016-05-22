@@ -11,18 +11,32 @@
             />
     </data>
 
-    <FrameLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="ezlife.movil.efragments.fragments.ListFragment">
+        tools:context="ezlife.movil.efragments.fragments.ListFragment"
+        android:stretchColumns="*"
+        >
 
       <ListView
           android:id="@+id/list"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
           android:entries="@array/colores"
           app:setOnItemClickListener="@{onItemClick}"
           />
 
-    </FrameLayout>
+        <TableRow>
+            <Button
+                android:text="Agregar"
+                />
+            <Button
+                android:text="Editar"
+                />
+            <Button
+                android:text="Elimnar"
+                />
+        </TableRow>
+
+    </TableLayout>
 </layout>

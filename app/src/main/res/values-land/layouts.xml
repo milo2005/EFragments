@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="f_list" type="layout">@layout/fragment_list_land</item>
+    <item name="a_support" type="layout">@layout/activity_support_screen</item>
+
+    <bool name="phone">true</bool>
+    <bool name="land">true</bool>
+
+</resources>
